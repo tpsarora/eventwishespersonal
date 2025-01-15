@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "firebase-admin": "^13.0.2"
+    "firebase-admin": "^13.0.2",
+    "dotenv": "^16.0.3"
   },
   "name": "@emailjs/browser",
   "version": "1.0.0",
