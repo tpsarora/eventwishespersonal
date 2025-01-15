@@ -1,7 +1,7 @@
 ﻿const admin = require("firebase-admin");
 const emailjs = require("@emailjs/browser");
 
-FIREBASE_CONFIG = {
+const FIREBASE_CONFIG = {
   apiKey: "AIzaSyCfbqC-893YBqhgR5OR0eHyX-EXzCIoTC8",
   authDomain: "jwdatabase-f0e20.firebaseapp.com",
   databaseURL: "https://jwdatabase-f0e20-default-rtdb.firebaseio.com",
@@ -12,15 +12,16 @@ FIREBASE_CONFIG = {
   measurementId: "G-BQG1N754TN"
 };
 
-EMAILJS_SERVICE_ID = 'service_jitwsrj';
+const EMAILJS_SERVICE_ID = 'service_jitwsrj';
 
-EMAILJS_TEMPLATE_ID = 'template_m0u22pm';
+const EMAILJS_TEMPLATE_ID = 'template_m0u22pm';
 
-EMAILJS_USER_ID = 'qcbXaXrWGMaIRt6_o';
+const EMAILJS_USER_ID = 'qcbXaXrWGMaIRt6_o';
 
 // Load Firebase config from environment variables
 console.log(process.env);
-const firebaseConfig = JSON.parse(FIREBASE_CONFIG);
+const firebaseConfig = FIREBASE_CONFIG;
+//const firebaseConfig = JSON.parse(FIREBASE_CONFIG);
 
 admin.initializeApp({
   credential: admin.credential.cert(firebaseConfig),
