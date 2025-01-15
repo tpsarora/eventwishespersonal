@@ -1,5 +1,6 @@
 ﻿const admin = require("firebase-admin");
 const emailjs = require("@emailjs/browser");
+require('dotenv').config(); // Load environment variables from .env file
 
 
 // Load Firebase service account key from environment variable
