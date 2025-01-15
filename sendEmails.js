@@ -1,9 +1,26 @@
 ﻿const admin = require("firebase-admin");
 const emailjs = require("@emailjs/browser");
 
+FIREBASE_CONFIG = {
+  apiKey: "AIzaSyCfbqC-893YBqhgR5OR0eHyX-EXzCIoTC8",
+  authDomain: "jwdatabase-f0e20.firebaseapp.com",
+  databaseURL: "https://jwdatabase-f0e20-default-rtdb.firebaseio.com",
+  projectId: "jwdatabase-f0e20",
+  storageBucket: "jwdatabase-f0e20.appspot.com",
+  messagingSenderId: "1335908909",
+  appId: "1:1335908909:web:0c132d7c79008c490c36a4",
+  measurementId: "G-BQG1N754TN"
+};
+
+EMAILJS_SERVICE_ID = 'service_jitwsrj';
+
+EMAILJS_TEMPLATE_ID = 'template_m0u22pm';
+
+EMAILJS_USER_ID = 'qcbXaXrWGMaIRt6_o';
+
 // Load Firebase config from environment variables
 console.log(process.env);
-const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
+const firebaseConfig = JSON.parse(FIREBASE_CONFIG);
 
 admin.initializeApp({
   credential: admin.credential.cert(firebaseConfig),
@@ -31,9 +48,9 @@ async function sendEmails() {
 }
 
 function sendEmail(toEmail, message, subject) {
-  emailjs.init(process.env.EMAILJS_USER_ID);
+  emailjs.init(EMAILJS_USER_ID);
   emailjs
-    .send(process.env.EMAILJS_SERVICE_ID, process.env.EMAILJS_TEMPLATE_ID, {
+    .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
       message,
       subject,
       to_email: toEmail,
