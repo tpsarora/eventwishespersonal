@@ -2,6 +2,7 @@
 const emailjs = require("@emailjs/browser");
 
 // Load Firebase config from environment variables
+console.log(process.env);
 const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
 
 admin.initializeApp({
