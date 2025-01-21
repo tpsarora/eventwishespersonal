@@ -16,6 +16,8 @@ const serviceAccountKey = Buffer.from(
 ).toString("utf8");
 const serviceAccount = JSON.parse(serviceAccountKey);
 
+console.log(serviceAccount);
+
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyCfbqC-893YBqhgR5OR0eHyX-EXzCIoTC8",
   authDomain: "jwdatabase-f0e20.firebaseapp.com",
@@ -95,8 +97,8 @@ function sendEmail(toEmail, message, subject) {
         to_email: "malikaarora2202@gmail.com",
       },
       {
-        publicKey: "your_public_key",
-        privateKey: "your_private_key",
+        publicKey: EMAILJS_USER_ID,
+        privateKey: serviceAccount.private_key
       }
     )
     .then(() => console.log("Email sent!"))
