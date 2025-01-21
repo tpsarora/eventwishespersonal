@@ -4,7 +4,7 @@ require('dotenv').config(); // Load environment variables from .env file
 
 
 // Load Firebase service account key from environment variable
-console.log(process.env);
+console.log("Printing env ",process.env);
 const serviceAccountKey = Buffer.from(process.env.FIREBASE_SERVICE_ACCOUNT_KEY, 'base64').toString('utf8');
 const serviceAccount = JSON.parse(serviceAccountKey);
 
