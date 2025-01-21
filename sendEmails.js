@@ -95,15 +95,16 @@ function sendEmail(toEmail, message, subject) {
         message: "Test Message",
         subject: "Test Subject",
         to_email: "malikaarora2202@gmail.com",
-      },
-      {
-        publicKey: "qcbXaXrWGMaIRt6_o",
-        privateKey: serviceAccount.private_key
       }
     )
     .then(() => console.log("Email sent!"))
     .catch((error) => console.error("Error sending email:", error));
 
+    // ,
+    //   {
+    //     publicKey: "qcbXaXrWGMaIRt6_o",
+    //     privateKey: serviceAccount.private_key
+    //   }
   emailjs
     .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
       message,
