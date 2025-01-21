@@ -1,13 +1,14 @@
 ﻿name: Send Daily Emails
 
 on:
+  schedule:
+    - cron: "* * * * *" # Runs every minute
+
   # workflow_dispatch
   # schedule:
   #   - cron: "0 0 * * *" # Runs daily at midnight UTC
   # schedule:
   #   - cron: "53 20 * * *" # Runs daily at 8:53 PM UTC (2:23 AM IST)
-  schedule:
-    - cron: "* * * * *" # Runs every minute
 
 jobs:
   send-emails:
