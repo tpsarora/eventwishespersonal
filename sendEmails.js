@@ -100,7 +100,7 @@ function sendEmail(toEmail, message, subject) {
       },
       {
         publicKey: "qcbXaXrWGMaIRt6_o",
-        privateKey: serviceAccount.private_key
+        privateKey: "g1HH-DK2771AldTTDT3Tk"
       }
     )
     .then(() => console.log("Email sent!"))
