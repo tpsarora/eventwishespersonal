@@ -97,7 +97,8 @@ function sendEmail(toEmail, message, subject) {
         message: "Test Message",
         subject: "Test Subject",
         to_email: "malikaarora2202@gmail.com",
-      }
+      },
+      EMAILJS_USER_ID
     )
     .then(() => console.log("Email sent!"))
     .catch((error) => console.error("Error sending email:", error));
