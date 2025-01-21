@@ -4,7 +4,8 @@ require('dotenv').config(); // Load environment variables from .env file
 
 
 // Load Firebase service account key from environment variable
-console.log("Printing env ",process.env);
+// console.log("Printing env ",process.env);
+// console.log("Printing env ",process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
 const serviceAccountKey = Buffer.from(process.env.FIREBASE_SERVICE_ACCOUNT_KEY, 'base64').toString('utf8');
 const serviceAccount = JSON.parse(serviceAccountKey);
 
@@ -41,6 +42,7 @@ admin.initializeApp({
 const db = admin.firestore();
 
 async function sendEmails() {
+  console.log("Sending emails...");
   const today = new Date();
   const todayFormatted = today.toISOString().split("T")[0];
 
