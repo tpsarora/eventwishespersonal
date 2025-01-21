@@ -1,6 +1,7 @@
 ﻿name: Send Daily Emails
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "* * * * *" # Runs every minute
 
