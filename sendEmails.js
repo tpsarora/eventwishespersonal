@@ -1,8 +1,9 @@
 ﻿const admin = require("firebase-admin");
-//const emailjs = require("@emailjs/browser");
-//const emailjs = require("emailjs-com");
-const emailjs = require('@emailjs/nodejs');
+global.location = { protocol: 'http:' };
 
+const emailjs = require("@emailjs/browser");
+//const emailjs = require("emailjs-com");
+//const emailjs = require("@emailjs/nodejs");
 
 require("dotenv").config(); // Load environment variables from .env file
 
@@ -85,16 +86,33 @@ function sendEmail(toEmail, message, subject) {
   console.log("Sending email to ", toEmail);
 
   emailjs
+    .send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      {
+        message: "Test Message",
+        subject: "Test Subject",
+        to_email: "malikaarora2202@gmail.com",
+      },
+      {
+        publicKey: "your_public_key",
+        privateKey: "your_private_key",
+      }
+    )
+    .then(() => console.log("Email sent!"))
+    .catch((error) => console.error("Error sending email:", error));
+
+  emailjs
     .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
       message,
       subject,
       email: toEmail,
 
       from_name: "Tavinder Arora",
-      to_name: 'Malika',
-      from_email: "tpsarora@gmail.com",  // Hardcoded sender's email
+      to_name: "Malika",
+      from_email: "tpsarora@gmail.com", // Hardcoded sender's email
       email: toEmail, // Send to the recipient email
-      link: "https://www.jagjitwelfare.com/Birthdays/image.png"
+      link: "https://www.jagjitwelfare.com/Birthdays/image.png",
     })
     .then(() => console.log("Email sent!"))
     .catch((error) => console.error("Error sending email:", error));
