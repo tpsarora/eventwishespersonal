@@ -31,7 +31,7 @@ const EMAILJS_USER_ID = 'qcbXaXrWGMaIRt6_o';
 
 
 // Load Firebase config from environment variables
-console.log(process.env);
+//console.log(process.env);
 const firebaseConfig = FIREBASE_CONFIG;
 //const firebaseConfig = JSON.parse(FIREBASE_CONFIG);
 
@@ -49,6 +49,8 @@ async function sendEmails() {
   try {
     const snapshot = await db.collection("Event").get();
 
+    console.log("Snapshot: ", snapshot);
+
     snapshot.forEach((doc) => {
       const data = doc.data();
       if (data.Date === todayFormatted) {
@@ -63,6 +65,9 @@ async function sendEmails() {
 
 function sendEmail(toEmail, message, subject) {
   emailjs.init(EMAILJS_USER_ID);
+  console.log("ID ",EMAILJS_USER_ID);
+  console.log("Sending email to ", toEmail);
+
   emailjs
     .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
       message,
