@@ -49,10 +49,11 @@ async function sendEmails() {
   try {
     const snapshot = await db.collection("Event").get();
 
-    console.log("Snapshot: ", snapshot);
+    console.log("Snapshot: ", JSON.stringify(snapshot, null, 2));
 
     snapshot.forEach((doc) => {
       const data = doc.data();
+      console.log("Data: ", JSON.stringify(data, null, 2));
       if (data.Date === todayFormatted) {
         const message = `Happy ${data.Occasion}, ${data.To_Name}!`;
         sendEmail(data.To_Email, message, `Happy ${data.Occasion}!`);
