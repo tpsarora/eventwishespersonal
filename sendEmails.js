@@ -1,6 +1,8 @@
 ﻿const admin = require("firebase-admin");
-const emailjs = require("@emailjs/browser");
+//const emailjs = require("@emailjs/browser");
 //const emailjs = require("emailjs-com");
+const emailjs = require('@emailjs/nodejs');
+
 
 require("dotenv").config(); // Load environment variables from .env file
 
