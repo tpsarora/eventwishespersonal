@@ -87,7 +87,7 @@ function sendEmail(toEmail, message, subject) {
 
   console.log("Sending email to ", toEmail);
 
-  emailjs.init(EMAILJS_USER_ID);
+  //emailjs.init(EMAILJS_USER_ID);
 
   emailjs
     .send(
@@ -111,20 +111,20 @@ function sendEmail(toEmail, message, subject) {
     //     publicKey: "qcbXaXrWGMaIRt6_o",
     //     privateKey: serviceAccount.private_key
     //   }
-  emailjs
-    .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-      message,
-      subject,
-      email: toEmail,
+//   emailjs
+//     .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+//       message,
+//       subject,
+//       email: toEmail,
 
-      from_name: "Tavinder Arora",
-      to_name: "Malika",
-      from_email: "tpsarora@gmail.com", // Hardcoded sender's email
-      email: toEmail, // Send to the recipient email
-      link: "https://www.jagjitwelfare.com/Birthdays/image.png",
-    })
-    .then(() => console.log("Email sent!"))
-    .catch((error) => console.error("Error sending email:", error));
+//       from_name: "Tavinder Arora",
+//       to_name: "Malika",
+//       from_email: "tpsarora@gmail.com", // Hardcoded sender's email
+//       email: toEmail, // Send to the recipient email
+//       link: "https://www.jagjitwelfare.com/Birthdays/image.png",
+//     })
+//     .then(() => console.log("Email sent!"))
+//     .catch((error) => console.error("Error sending email:", error));
 }
 
 sendEmails();
