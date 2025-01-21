@@ -89,42 +89,49 @@ function sendEmail(toEmail, message, subject) {
 
   emailjs.init(EMAILJS_USER_ID);
 
+  // emailjs
+  //   .send(
+  //     EMAILJS_SERVICE_ID,
+  //     EMAILJS_TEMPLATE_ID,
+  //     {
+  //       message: "Test Message",
+  //       subject: "Test Subject",
+  //       to_email: "malikaarora2202@gmail.com",
+  //     },
+  //     {
+  //       publicKey: "qcbXaXrWGMaIRt6_o",
+  //       privateKey: "g1HH-DK2771AldTTDT3Tk"
+  //     }
+  //   )
+  //   .then(() => console.log("Email sent!"))
+  //   .catch((error) => console.error("Error sending email:", error));
+
+  // ,
+  //   {
+  //     publicKey: "qcbXaXrWGMaIRt6_o",
+  //     privateKey: serviceAccount.private_key
+  //   }
   emailjs
     .send(
       EMAILJS_SERVICE_ID,
       EMAILJS_TEMPLATE_ID,
       {
-        message: "Test Message",
-        subject: "Test Subject",
-        to_email: "malikaarora2202@gmail.com",
+        message,
+        subject,
+
+        from_name: "Tavinder Arora",
+        to_name: "Malika",
+        from_email: "tpsarora@gmail.com", // Hardcoded sender's email
+        email: toEmail, // Send to the recipient email
+        link: "https://www.jagjitwelfare.com/Birthdays/image.png",
       },
       {
         publicKey: "qcbXaXrWGMaIRt6_o",
-        privateKey: "g1HH-DK2771AldTTDT3Tk"
+        privateKey: "g1HH-DK2771AldTTDT3Tk",
       }
     )
     .then(() => console.log("Email sent!"))
     .catch((error) => console.error("Error sending email:", error));
-
-    // ,
-    //   {
-    //     publicKey: "qcbXaXrWGMaIRt6_o",
-    //     privateKey: serviceAccount.private_key
-    //   }
-//   emailjs
-//     .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-//       message,
-//       subject,
-//       email: toEmail,
-
-//       from_name: "Tavinder Arora",
-//       to_name: "Malika",
-//       from_email: "tpsarora@gmail.com", // Hardcoded sender's email
-//       email: toEmail, // Send to the recipient email
-//       link: "https://www.jagjitwelfare.com/Birthdays/image.png",
-//     })
-//     .then(() => console.log("Email sent!"))
-//     .catch((error) => console.error("Error sending email:", error));
 }
 
 sendEmails();
