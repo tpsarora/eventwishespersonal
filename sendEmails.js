@@ -97,7 +97,7 @@ function sendEmail(toEmail, message, subject) {
         to_email: "malikaarora2202@gmail.com",
       },
       {
-        publicKey: EMAILJS_USER_ID,
+        publicKey: "qcbXaXrWGMaIRt6_o",
         privateKey: serviceAccount.private_key
       }
     )
