@@ -1,5 +1,5 @@
 ﻿const admin = require("firebase-admin");
-global.location = { protocol: 'http:' };
+//global.location = { protocol: 'http:' };
 
 //const emailjs = require("@emailjs/browser");
 //const emailjs = require("emailjs-com");
