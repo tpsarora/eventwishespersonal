@@ -77,13 +77,13 @@ async function sendEmails() {
 function sendEmail(toEmail, message, subject) {
   console.log("ID ", EMAILJS_USER_ID);
 
-  try {
-    emailjs.init(EMAILJS_USER_ID);
-    console.log("Initialized EmailJS with user ID:", EMAILJS_USER_ID);
-  } catch (initError) {
-    console.error("Error initializing EmailJS:", initError);
-    return; // Exit the function if initialization fails
-  }
+  // try {
+  //   emailjs.init(EMAILJS_USER_ID);
+  //   console.log("Initialized EmailJS with user ID:", EMAILJS_USER_ID);
+  // } catch (initError) {
+  //   console.error("Error initializing EmailJS:", initError);
+  //   return; // Exit the function if initialization fails
+  // }
 
   console.log("Sending email to ", toEmail);
 
