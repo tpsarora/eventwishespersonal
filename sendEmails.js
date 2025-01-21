@@ -87,6 +87,8 @@ function sendEmail(toEmail, message, subject) {
 
   console.log("Sending email to ", toEmail);
 
+  emailjs.init(EMAILJS_USER_ID);
+
   emailjs
     .send(
       EMAILJS_SERVICE_ID,
