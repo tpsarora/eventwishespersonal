@@ -86,7 +86,7 @@ function sendEmail(toEmail, message, subject) {
     .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
       message,
       subject,
-      to_email: toEmail,
+      email: toEmail,
     })
     .then(() => console.log("Email sent!"))
     .catch((error) => console.error("Error sending email:", error));
