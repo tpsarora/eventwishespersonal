@@ -45,7 +45,7 @@ async function sendEmails() {
   console.log("Sending emails...");
   const today = new Date();
   const todayFormatted = today.toISOString().split("T")[0];
-
+  console.log("Today: ", todayFormatted);
   try {
     const snapshot = await db.collection("Event").get();
 
