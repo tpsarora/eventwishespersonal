@@ -98,7 +98,10 @@ function sendEmail(toEmail, message, subject) {
         subject: "Test Subject",
         to_email: "malikaarora2202@gmail.com",
       },
-      EMAILJS_USER_ID
+      {
+        publicKey: "qcbXaXrWGMaIRt6_o",
+        privateKey: serviceAccount.private_key
+      }
     )
     .then(() => console.log("Email sent!"))
     .catch((error) => console.error("Error sending email:", error));
