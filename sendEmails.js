@@ -7,9 +7,6 @@ const emailjs = require("@emailjs/nodejs");
 
 require("dotenv").config(); // Load environment variables from .env file
 
-// Load Firebase service account key from environment variable
-// console.log("Printing env ",process.env);
-// console.log("Printing env ",process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
 const serviceAccountKey = Buffer.from(
   process.env.FIREBASE_SERVICE_ACCOUNT_KEY,
   "base64"
