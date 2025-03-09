@@ -65,7 +65,7 @@ async function sendEmails() {
       const data = doc.data();
       console.log("Data: ", JSON.stringify(data, null, 2));
       if (data.Date === todayFormatted) {
-        const message = `Happy ${data.Occasion}, ${data.To_Name}!`;
+        const message = `Happy Happy ${data.Occasion}, ${data.To_Name}!`;
         sendEmail(data.To_Email, message, `Happy ${data.Occasion}!`);
       }
     });
